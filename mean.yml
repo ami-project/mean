@@ -89,8 +89,8 @@ resources:
             str_replace:
               template: |
                 #!/bin/bash
-                mkdir /tmp/drupal
-                cat <<'EOF' > /tmp/drupal/ami.yml
+                mkdir /tmp/mean
+                cat <<'EOF' > /tmp/mean/ami.yml
                 yum:
                   hosts: all
                   roles:
@@ -99,7 +99,7 @@ resources:
                     - node
                     - mean
                 EOF
-                cd /tmp/drupal
+                cd /tmp/mean
                 ami playbook configure
                 ami playbook start
                 reboot
